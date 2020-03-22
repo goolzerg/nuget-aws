@@ -52,4 +52,4 @@ Eventually you can start an image:
 docker run --rm --name nuget-server -p 80:80 --env-file baget.env -v "$(pwd)/baget-data:/var/baget" loicsharma/baget:latest
 ```
 
-That's it, our repository is installed.
+That's it, our repository is installed and accessible through out public IP address.
