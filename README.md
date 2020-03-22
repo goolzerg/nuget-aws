@@ -4,9 +4,12 @@ My goal is create nuget private repository on AWS cloud with public IP using Ter
 Manually create a new user on AWS account with full access permission to EC2.
 Important: during creation you need to check the checkbox programmatic access and save csv in secure place.
 
-We will need one EC2 instance for our repository, so let's create it:
-nuget-to-cloud.tf
-At first here, you have to replace access_key an secret_key on yours.
+We will need create EC2 instance for our repository, so let's do it:
+```
+git clone https://github.com/goolzerg/nuget-aws.git
+```
+
+Open nuget-to-aws.tf in simple text editor. At first here, you have to replace access_key an secret_key on yours.
 Little below you can see Security group block. Here ports are opened 80 and 22 for everyone (just for convenience in this example).
 Then SSH public key. The SSH key must be generated with 3rd party service, e.g puttygen.exe.
 
