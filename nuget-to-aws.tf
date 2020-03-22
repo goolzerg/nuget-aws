@@ -18,7 +18,7 @@ resource "aws_instance" "nuget_repository" {
 #Security Group
 
 resource "aws_default_vpc" "default" {
-  tags = {
+    tags = {
     Name = "Default VPC"
   }
 }
