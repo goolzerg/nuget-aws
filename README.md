@@ -26,5 +26,5 @@ https://hub.docker.com/r/loicsharma/baget
 That's it, our repository is installed and accessible throughout public IP address.
 Now we can push our packages to the repository:
 ```
-dotnet nuget push -s http://localhost:5555/v3/index.json -k NUGET-SERVER-API-KEY package.1.0.0.nupkg
+dotnet nuget push -s http://34.232.277.57/v3/index.json -k NUGET-SERVER-API-KEY package.1.0.0.nupkg
 ```
