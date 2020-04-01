@@ -1,7 +1,6 @@
-
 provider "aws" {
-  access_key = "YOUR_ACCESS_KEY"
-  secret_key = "YOUR_SECRET_KEY"
+  access_key = "AKIARGL4AXZW3MPFUDPU"
+  secret_key = "OA8F8KeCx4/NSzXmNEGqJp+GULG4xD4V7GaGCxNI"
   region     = "us-east-1"
 }
 
@@ -12,19 +11,20 @@ resource "aws_instance" "nuget_repository" {
   instance_type   = "t2.micro"
   security_groups = ["${aws_security_group.allow_http_ssh.name}"]
   key_name        = aws_key_pair.key_pair_ssh.key_name
+  user_data       = file("./data.txt")
 }
 
 
 #Security Group
 
 resource "aws_default_vpc" "default" {
-    tags = {
+  tags = {
     Name = "Default VPC"
   }
 }
 
 resource "aws_security_group" "allow_http_ssh" {
-  name   = "allow_http_ssh"
+  name   = "allow_http_ssh3"
   vpc_id = aws_default_vpc.default.id
 
   ingress {
@@ -55,7 +55,7 @@ resource "aws_security_group" "allow_http_ssh" {
 
 resource "aws_key_pair" "key_pair_ssh" {
   key_name   = "key_pair_ssh"
-  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEA+j/eUFfOMq/vSn9wU0NFuMeeqCw8hzbABOcNka86oWXBb3XazEucjl18LqKxiuprvwZUUmmuIPbBR/o1V7sYsahd2kx52FNezWiUn+PfFjOq+CJFcDd1p7TNwIeK1TV6JqbY7NnOsJR53+79kE1MlNNa1vMm9D617g3cLF0Ypzeo64XJbjk1AQiuFbecB679CO2WrBN4cla8wO/r5iOsLCKHeU+jpBwXF4fXq6IK/y8YCaG6EmikkQLI580ifz/ajGITzV5swWCeP2WVk4gxn8HYZt9yDpqKCMlllUp5aAaJbiX7lp85txXkglnFh8aPCadrkyB7tnyrD02N+/KiGQ== rsa-key-20200322"
+  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAhBaaEkzlUJ25LNjHxvZdT1wfGMwdLn2KJu+O4bb17YIIlqcImRsapsqW76fKr6pnu2eBmVxGfYDrdWEwEWqWMFQvFfrAfbMKNET8Dht8oJZqCdRm7kO+O3422rNA84/2FYiCEJWgUiUOYEa2D5zCHn9KL61yn3freSlAzE1bcMcm22WH9kMNRTpdCxQhJJF3YdZ9wJCIGsmHVoboDnUj38YGzYeFKmTOT1wRveZBA6WZ8vmHss2Domn/aHln2IpbYllWaoA2MrhVrRcdjznlR3bihRvV6/emVq2KkPQrCXoaMhy7lcGbNh1ismaYrNadZ0czYEx/FuZj4UgwZgD13w== rsa-key-20200401"
 }
 
 #Elastic IP address

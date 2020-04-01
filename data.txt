@@ -1,0 +1,8 @@
+#!/bin/bash
+sudo amazon-linux-extras install docker -y
+sudo systemctl start docker
+sudo systemctl enable docker
+sudo usermod -a -G docker ec2-user
+docker pull loicsharma/baget
+echo -e "ApiKey=NUGET-SERVER-API-KEY\nStorage__Type=FileSystem\nStorage__Path=/var/baget/packages\nDatabase__Type=Sqlite\nDatabase__ConnectionString=Data Source=/var/baget/baget.db\nSearch__Type=Database" > baget.env
+docker run --rm --name nuget-server -p 80:80 --env-file baget.env -v "$(pwd)/baget-data:/var/baget" loicsharma/baget:latest
