@@ -56,7 +56,7 @@ docker run --rm --name nuget-server -p 80:80 --env-file baget.env -v "$(pwd)/bag
 ```
 
 That's it, our repository is installed and accessible through public IP address.
-Now we can push our packages to repository:
+Now we can push our packages to the repository:
 ```
 dotnet nuget push -s http://localhost:5555/v3/index.json -k NUGET-SERVER-API-KEY package.1.0.0.nupkg
 ```
