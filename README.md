@@ -10,8 +10,11 @@ git clone https://github.com/goolzerg/nuget-aws.git
 ```
 
 1. Open nuget-to-aws.tf 
+
 2. You have to replace access_key an secret_key on yours.
+
 3. Below you can see Security group block. Here ports are opened 80 and 22 for everyone (just for convenience in this example).
+
 4. Then SSH public key. The SSH key must be generated with 3rd party service, e.g puttygen.exe and replaced too.
 
 If you've already installed Terraform, you should in the same folder where you've created .tf file, start CLI and type:
