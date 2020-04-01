@@ -55,7 +55,7 @@ Eventually you can start an image:
 docker run --rm --name nuget-server -p 80:80 --env-file baget.env -v "$(pwd)/baget-data:/var/baget" loicsharma/baget:latest
 ```
 
-That's it, our repository is installed and accessible through public IP address.
+That's it, our repository is installed and accessible throughout public IP address.
 Now we can push our packages to the repository:
 ```
 dotnet nuget push -s http://localhost:5555/v3/index.json -k NUGET-SERVER-API-KEY package.1.0.0.nupkg
