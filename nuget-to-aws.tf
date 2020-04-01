@@ -24,7 +24,7 @@ resource "aws_default_vpc" "default" {
 }
 
 resource "aws_security_group" "allow_http_ssh" {
-  name   = "allow_http_ssh3"
+  name   = "allow_http_ssh"
   vpc_id = aws_default_vpc.default.id
 
   ingress {
