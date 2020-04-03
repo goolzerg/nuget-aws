@@ -17,7 +17,7 @@ git clone https://github.com/goolzerg/nuget-aws.git
 
 4. Then SSH public key. The SSH key must be generated with 3rd party service, e.g puttygen.exe and replaced too.
 
-If you've already installed Terraform, you should in the same folder where you've created .tf file, start CLI and type:
+If you've already installed Terraform, you should in the same folder where you've downloaded .tf file, start CLI and type:
 ```
 $ terraform init
 $ terraform apply
