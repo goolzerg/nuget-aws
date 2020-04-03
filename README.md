@@ -22,7 +22,6 @@ If you've already installed Terraform, you should in the same folder where you'v
 $ terraform init
 $ terraform apply
 ```
-Right now we have prepared EC2 instance for our nuget repository. Let's connect to it through SSH using our generated private key and IP address from output.
 
 In this example was used docker image maintaining by BaGet.
 https://hub.docker.com/r/loicsharma/baget
